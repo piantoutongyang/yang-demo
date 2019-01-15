@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:util="http://www.springframework.org/schema/util" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd">
+
+	<!-- 支持 @AspectJ 标记 -->
+	<aop:aspectj-autoproxy proxy-target-class="true" />
+	
+	<!-- 扫描spring-mvc的controller com.* com.mingyisoft.demoyang.spring.springmvc.controller-->
+	<context:component-scan base-package="com.*" />
+	<!-- 启用spring mvc 注解,如果需要在controller里返回json数据也需要开启这个 -->
+	<mvc:annotation-driven/>
+	
+	
+	<mvc:interceptors>  
+        <!-- 配置Token拦截器，防止用户重复提交数据 -->  
+        <mvc:interceptor>  
+            <mvc:mapping path="/**"/><!--这个地方时你要拦截得路径 我这个意思是拦截所有得URL-->  
+            <bean class="com.mingyisoft.javawebdemo.repeat.TokenInterceptor"/><!--class文件路径改成你自己写得拦截器路径！！ -->  
+        </mvc:interceptor>  
+</mvc:interceptors>  
+</beans>

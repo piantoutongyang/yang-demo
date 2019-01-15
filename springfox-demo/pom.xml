@@ -1,0 +1,133 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.mingyisoft</groupId>
+		<artifactId>yang-demo</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<groupId>com.mingyisoft</groupId>
+	<artifactId>springfox-demo</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>springfox-demo Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<version.spring>3.2.14.RELEASE</version.spring>
+	</properties>
+
+	<distributionManagement>
+		<snapshotRepository>
+			<id>webi_deploy</id>
+			<name>Snapshot</name>
+			<url>http://192.168.250.167:8981/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>webi_deploy</id>
+			<name>Release</name>
+			<url>http://192.168.250.167:8981/nexus/content/repositories/releases</url>
+		</repository>
+	</distributionManagement>
+
+	<dependencies>
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.5.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger-ui</artifactId>
+			<version>2.5.0</version>
+		</dependency>
+
+
+		<dependency>
+			<groupId>com.webi</groupId>
+			<artifactId>speakhi_teenager_base</artifactId>
+			<version>1.46.1-SNAPSHOT</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>javax.servlet-api</artifactId>
+			<version>3.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.7</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${version.spring}</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.12</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+			<version>5.2.1.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-web</artifactId>
+			<version>${version.spring}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-webmvc</artifactId>
+			<version>${version.spring}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.5.4</version>
+		</dependency>
+	</dependencies>
+
+
+	<build>
+		<finalName>ROOT</finalName>
+
+		<plugins>
+			<!--tomcat启动插件 -->
+			<plugin>
+				<groupId>org.apache.tomcat.maven</groupId>
+				<artifactId>tomcat7-maven-plugin</artifactId>
+				<version>2.1</version>
+				<configuration>
+					<port>8899</port>
+					<path>/</path>
+					<charset>UTF-8</charset>
+					<uriEncoding>UTF-8</uriEncoding>
+					<warSourceDirectory>target/ROOT</warSourceDirectory>
+					<warFile>target/ROOT.war</warFile>
+					<finalName></finalName>
+					<server>tomcat7</server>
+				</configuration>
+			</plugin>
+		</plugins> 
+
+	</build>
+</project>
