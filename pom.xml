@@ -9,5 +9,6 @@
     <module>java-demo</module>
     <module>javaweb-demo</module>
     <module>springfox-demo</module>
+    <module>zookeeper-demo</module>
   </modules>
 </project>
