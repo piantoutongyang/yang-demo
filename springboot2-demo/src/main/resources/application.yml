@@ -1,0 +1,50 @@
+server:
+  port: 8888
+  address: localhost
+
+# logging: 
+#  file: logs/my.log
+#  level: 
+#    org.springboot2.demo.controller: debug
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/yang?autoReconnect=true&useUnicode=true&characterEncoding=utf-8&allowMultiQueries=true
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      pool-name: HikariCP # 连接池名称
+      minimum-idle: 50 # 池中维护的最小空闲连接数
+      maximum-pool-size: 100 # 池中最大连接数，包括闲置和使用中的连接
+      auto-commit: true # 自动提交从池中返回的连接
+      idle-timeout: 60000 # 连接允许在池中闲置的最长时间,60000=1分钟
+      max-lifetime: 1800000 # 池中连接最长生命周期，1800000=30分钟
+      connection-timeout: 30000 # 等待来自池的连接的最大毫秒数
+      connection-test-query: SELECT 1
+      validation-timeout: 5000 # 连接将被测试活动的最大时间量
+  mail:
+    host: smtp.xdf.cn
+    username: yangminghan@xdf.cn
+    password: 1qaz!QAZ
+    properties:
+      mail:
+        smtp:
+          auth: true  # 需要验证登录名和密码
+          port: 25
+        starttls:
+          enable: true  # 需要TLS认证 保证发送邮件安全验证
+          required: true
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: org.springboot2.demo.model
+
+#pagehelper
+pagehelper:
+    helperDialect: mysql
+    reasonable: true
+    supportMethodsArguments: true
+    params: count=countSql
+    returnPageInfo: check
