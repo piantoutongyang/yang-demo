@@ -1,2 +1,0 @@
-springboot2天生带了一些组件，包括：logback，hikariCP
-不用特殊的配置文件，直接在application.yml里配置即可。

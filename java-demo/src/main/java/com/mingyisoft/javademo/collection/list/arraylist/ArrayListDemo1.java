@@ -71,6 +71,35 @@ public class ArrayListDemo1 {
 		} else {
 			System.out.println("list2 no");
 		}
+		
+		List tempList1 = new ArrayList();
+		tempList1.add(12);
+		tempList1.add(10);
+		tempList1.add(11);
+		tempList1.add(2);
+		tempList1.add(2);
+		tempList1.add(4);
+		tempList1.add(1);
+		tempList1.add(0);
+		tempList1.add(8);
+		//顺序打乱是否能命中contains？能命中
+		if (list1.containsAll(tempList1)) {
+			System.out.println("tempList1 yes");
+		} else {
+			System.out.println("tempList1 no");
+		}
+		
+		//超出了是否能命中contains？无法命中
+		List tempList2 = new ArrayList();
+		tempList2.add(12);
+		tempList2.add(10);
+		tempList2.add(11);
+		tempList2.add(999);
+		if (list1.containsAll(tempList2)) {
+			System.out.println("tempList2 yes");
+		} else {
+			System.out.println("tempList2 no");
+		}
 
 		// 其实在list1中的list2已经不完整了，但是也能把剩余的全部干掉。
 		list1.removeAll(list2);

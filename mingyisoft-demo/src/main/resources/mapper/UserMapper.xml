@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.mingyisoft.demo.user.dao.UserMapper" >
+  <sql id="BASE_TABLE">
+    t_user
+  </sql>
+
+  <sql id="BASE_COLUMN">
+    user_id,user_name
+  </sql>
+  
+  <insert id="insert"
+	           parameterType="com.mingyisoft.demo.user.model.User">
+	  INSERT INTO t_user(
+	         user_id,
+	         user_name
+	  )
+	  values
+	  (
+	         #{userId},
+	         #{userName}
+	  )
+	</insert>
+
+  <select id="selectUsers" resultType="com.mingyisoft.demo.user.model.User">
+      SELECT
+        <include refid="BASE_COLUMN"/>
+      FROM
+        <include refid="BASE_TABLE"/>
+  </select>
+
+</mapper>

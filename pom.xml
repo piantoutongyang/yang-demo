@@ -7,11 +7,15 @@
   <packaging>pom</packaging>
   
   <parent>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-parent</artifactId> 
-		<version>2.1.3.RELEASE</version>
-		<relativePath/>
-	</parent>
+	<groupId>org.springframework.boot</groupId>
+	<artifactId>spring-boot-starter-parent</artifactId> 
+	 <version>2.1.6.RELEASE</version> 
+	<relativePath/>
+  </parent>
+  
+  <dependencies>
+  </dependencies>
+  
   
   <modules>
     <module>java-demo</module>
@@ -22,5 +26,17 @@
     <module>kafka-demo</module>
     <module>quartz-demo</module>
     <module>springboot2-demo</module>
+    <module>shardingjdbc-demo</module>
+    <module>mingyisoft-demo</module>
+    <module>yongge-demo</module>
+      <module>shardingjdbc-demo</module>
+      <module>jwt-demo</module>
+      <module>springcloudalibaba-demo</module>
+      <module>alibaba-nacos-discovery-client-common</module>
+      <module>spring-cloud-alibaba-dubbo-provider</module>
+    <module>spring-cloud-alibaba-dubbo-api</module>
+      <module>spring-cloud-alibaba-dubbo-consumer</module>
+      <module>spring-cloud-alibaba-resttemplate-provider</module>
+    <module>spring-cloud-alibaba-resttemplate-consumer</module>
   </modules>
 </project>
