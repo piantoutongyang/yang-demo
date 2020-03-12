@@ -19,7 +19,7 @@ public class AnnotationDemo1 extends AnnotationFather{
 }
 class AnnotationFather{
 	public void eat() {
-		System.out.println(123);
+		System.out.println(1233);
 	}
 	
 	public void sleep() {
