@@ -1,4 +1,4 @@
-package com.mingyisoft.javademo.thread.synchronous;
+package com.mingyisoft.javademo.thread.threadsafe.synchronous;
 /**
  * 死锁
  * @author lenovo

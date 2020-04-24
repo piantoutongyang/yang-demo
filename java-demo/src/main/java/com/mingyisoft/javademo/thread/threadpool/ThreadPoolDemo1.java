@@ -30,11 +30,3 @@ public class ThreadPoolDemo1 {
 		 */
 	}
 }
-
-class ThreadPool extends Thread{
-	public void run() {
-		for(int i = 0 ; i < 10 ; i++) {
-			System.out.println(this.getName() + " " + i);
-		}
-	}
-}

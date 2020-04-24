@@ -1,4 +1,4 @@
-package com.mingyisoft.javademo.thread.synchronous;
+package com.mingyisoft.javademo.thread.threadsafe.synchronous;
 
 public class SynchronizedDemo1 {
 	public static void main(String[] args) throws Exception {

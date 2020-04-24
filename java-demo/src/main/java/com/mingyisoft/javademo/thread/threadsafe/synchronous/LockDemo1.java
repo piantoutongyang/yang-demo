@@ -1,4 +1,4 @@
-package com.mingyisoft.javademo.thread.synchronous;
+package com.mingyisoft.javademo.thread.threadsafe.synchronous;
 
 import java.util.concurrent.locks.ReentrantLock;
 

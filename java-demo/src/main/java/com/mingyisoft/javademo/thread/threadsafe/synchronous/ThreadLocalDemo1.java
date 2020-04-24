@@ -1,4 +1,4 @@
-package com.mingyisoft.javademo.thread.synchronous;
+package com.mingyisoft.javademo.thread.threadsafe.synchronous;
 
 public class ThreadLocalDemo1 {
 	public static void main(String[] args) {

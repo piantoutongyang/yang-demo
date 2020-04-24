@@ -6,7 +6,7 @@
  * CreateDate:2016年2月28日 下午2:42:46
  * @author yangmh
  */ 
-package com.mingyisoft.javademo.thread.synchronous;
+package com.mingyisoft.javademo.thread.threadsafe.synchronous;
 
 /** 
  * Title: XXX<br> 
